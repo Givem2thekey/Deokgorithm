@@ -1,17 +1,27 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int N = sc.nextInt();
+		int N = Integer.parseInt(br.readLine());
 		
-		for (int i = 0; i < N; i+=4) {
-			System.out.print("long ");
+		StringBuilder sb = new StringBuilder();
+		if(N%4==0) {
+			N /= 4;
+		}else {
+			N /= 4;
+			N+=1;
 		}
+		for(int i=0; i<N; i++) {
+			sb.append("long ");
+		}
+		sb.append("int");
 		
-		System.out.print("int");
+		System.out.println(sb);
+		
 	}
 
 }
