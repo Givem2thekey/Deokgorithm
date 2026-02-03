@@ -1,14 +1,17 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		String S = br.readLine();
+		int i = Integer.parseInt(br.readLine());
 		
-		String str = sc.next();
-		int num = sc.nextInt();
+		System.out.println(S.charAt(i-1));
 		
-		System.out.println(str.charAt(num-1));
+		
 	}
 
 }
