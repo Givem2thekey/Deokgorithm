@@ -1,23 +1,26 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
-		String str = sc.next();
-	
-		int flag = 0;
-		
-		for (int i = 0; i <= str.length()/2; i++) {
-			if(str.charAt(i) == str.charAt(str.length()-i-1)) {
-				flag = 1;
-			}else {
-				flag = 0;
+		String str = br.readLine();
+		char[] arr = str.toCharArray();
+		int i=0;
+		int answer = 1;
+		while(i<=str.length()/2) {
+			if(arr[i]!=arr[arr.length-i-1]) {
+				answer = 0;
 				break;
 			}
+			i++;
 		}
-		System.out.println(flag);
+		
+		System.out.println(answer);
+		
+		
 	}
 
 }
