@@ -1,20 +1,20 @@
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
-		int n = sc.nextInt();
+		int n = Integer.parseInt(br.readLine());
 		
-		int t = 2;
-		int result = 0;
-		for (int i = 0; i < n; i++) {
-			result = (int) Math.pow((2*t-1), 2);
-			t = 2*t-1;
-		}
+		n = ((int)Math.pow(2, n)) +1;
+		sb.append((int)Math.pow(n,2));
 		
-		System.out.println(result);
+		
+		System.out.println(sb);
+		
 	}
 
 }
